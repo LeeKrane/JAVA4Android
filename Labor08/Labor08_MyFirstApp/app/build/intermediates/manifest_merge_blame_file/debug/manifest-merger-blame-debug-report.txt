@@ -1,0 +1,62 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.labor_08_myfirstapp"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+8-->C:\Development\Java\JAVA4Android\Labor08\Labor08_MyFirstApp\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->C:\Development\Java\JAVA4Android\Labor08\Labor08_MyFirstApp\app\src\main\AndroidManifest.xml
+10
+11    <application
+11-->C:\Development\Java\JAVA4Android\Labor08\Labor08_MyFirstApp\app\src\main\AndroidManifest.xml:5:5-26:19
+12        android:allowBackup="true"
+12-->C:\Development\Java\JAVA4Android\Labor08\Labor08_MyFirstApp\app\src\main\AndroidManifest.xml:6:9-35
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.1.0] C:\Users\Krane-User\.gradle\caches\transforms-2\files-2.1\ae31cc97a3f9383e0242537d69427d3a\core-1.1.0\AndroidManifest.xml:24:18-86
+14        android:debuggable="true"
+15        android:icon="@mipmap/ic_launcher"
+15-->C:\Development\Java\JAVA4Android\Labor08\Labor08_MyFirstApp\app\src\main\AndroidManifest.xml:7:9-43
+16        android:label="@string/app_name"
+16-->C:\Development\Java\JAVA4Android\Labor08\Labor08_MyFirstApp\app\src\main\AndroidManifest.xml:8:9-41
+17        android:roundIcon="@mipmap/ic_launcher_round"
+17-->C:\Development\Java\JAVA4Android\Labor08\Labor08_MyFirstApp\app\src\main\AndroidManifest.xml:9:9-54
+18        android:supportsRtl="true"
+18-->C:\Development\Java\JAVA4Android\Labor08\Labor08_MyFirstApp\app\src\main\AndroidManifest.xml:10:9-35
+19        android:testOnly="true"
+20        android:theme="@style/Theme.Labor_08_MyFirstApp" >
+20-->C:\Development\Java\JAVA4Android\Labor08\Labor08_MyFirstApp\app\src\main\AndroidManifest.xml:11:9-57
+21        <activity
+21-->C:\Development\Java\JAVA4Android\Labor08\Labor08_MyFirstApp\app\src\main\AndroidManifest.xml:12:9-18:20
+22            android:name="com.example.labor08_myfirstapp.DisplayMessageActivity"
+22-->C:\Development\Java\JAVA4Android\Labor08\Labor08_MyFirstApp\app\src\main\AndroidManifest.xml:12:19-87
+23            android:parentActivityName="com.example.labor08_myfirstapp.MainActivity" >
+23-->C:\Development\Java\JAVA4Android\Labor08\Labor08_MyFirstApp\app\src\main\AndroidManifest.xml:13:13-85
+24
+25            <!-- The meta-data tag is required if you support API level 15 and lower -->
+26            <meta-data
+26-->C:\Development\Java\JAVA4Android\Labor08\Labor08_MyFirstApp\app\src\main\AndroidManifest.xml:15:13-17:79
+27                android:name="android.support.PARENT_ACTIVITY"
+27-->C:\Development\Java\JAVA4Android\Labor08\Labor08_MyFirstApp\app\src\main\AndroidManifest.xml:16:17-63
+28                android:value="com.example.labor08_myfirstapp.MainActivity" />
+28-->C:\Development\Java\JAVA4Android\Labor08\Labor08_MyFirstApp\app\src\main\AndroidManifest.xml:17:17-76
+29        </activity>
+30        <activity android:name="com.example.labor08_myfirstapp.MainActivity" >
+30-->C:\Development\Java\JAVA4Android\Labor08\Labor08_MyFirstApp\app\src\main\AndroidManifest.xml:19:9-25:20
+30-->C:\Development\Java\JAVA4Android\Labor08\Labor08_MyFirstApp\app\src\main\AndroidManifest.xml:19:19-77
+31            <intent-filter>
+31-->C:\Development\Java\JAVA4Android\Labor08\Labor08_MyFirstApp\app\src\main\AndroidManifest.xml:20:13-24:29
+32                <action android:name="android.intent.action.MAIN" />
+32-->C:\Development\Java\JAVA4Android\Labor08\Labor08_MyFirstApp\app\src\main\AndroidManifest.xml:21:17-69
+32-->C:\Development\Java\JAVA4Android\Labor08\Labor08_MyFirstApp\app\src\main\AndroidManifest.xml:21:25-66
+33
+34                <category android:name="android.intent.category.LAUNCHER" />
+34-->C:\Development\Java\JAVA4Android\Labor08\Labor08_MyFirstApp\app\src\main\AndroidManifest.xml:23:17-77
+34-->C:\Development\Java\JAVA4Android\Labor08\Labor08_MyFirstApp\app\src\main\AndroidManifest.xml:23:27-74
+35            </intent-filter>
+36        </activity>
+37    </application>
+38
+39</manifest>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Labor10_TankApp</string>
+    <string name="btn_add">Tankvorgang hinzufügen</string>
+    <string name="btn_save">Speichern</string>
+    <string name="btn_show">Alle Tankvorgänge anzeigen</string>
+    <string name="btn_delete">Alle Tankvorgänge löschen</string>
+    <string name="hint_old_km">Alter Kilometerstand</string>
+    <string name="hint_new_km">Neuer Kilometerstand</string>
+    <string name="hint_liters">Liter</string>
+    <string name="hint_price_per_liter">Preis/Liter</string>
+    <string name="date">Date</string>
+    <string name="old_km">Old Km</string>
+    <string name="new_km">New Km</string>
+    <string name="liters">Liters</string>
+    <string name="price_per_liter">Price</string>
+</resources>
