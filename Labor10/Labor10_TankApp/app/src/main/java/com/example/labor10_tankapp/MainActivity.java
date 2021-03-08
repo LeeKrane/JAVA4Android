@@ -2,10 +2,14 @@ package com.example.labor10_tankapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,8 +30,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick_btnDelete (View view) {
-        TankvorgangDAO.getInstance(this).deleteAllTankvorgaenge();
-        tooltip(view, "Success!", Toast.LENGTH_SHORT);
+        MainActivity mainActivity = this;
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.dialog_title_deletion)
+                .setMessage(R.string.dialog_content_deletion)
+                .setNegativeButton("Cancel", (dialog, which) -> dialog.cancel())
+                .setPositiveButton("Yes", (dialog, which) -> {
+                    TankvorgangDAO.getInstance(mainActivity).deleteAllTankvorgaenge();
+                    tooltip(view, "Success!", Toast.LENGTH_SHORT);
+                })
+                .create()
+                .show();
     }
 
     static void tooltip (View view, String message, int length) {

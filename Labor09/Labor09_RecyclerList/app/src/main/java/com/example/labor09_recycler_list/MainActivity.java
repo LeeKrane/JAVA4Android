@@ -16,7 +16,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class MainActivity extends AppCompatActivity implements KlassenOnClickListener {
-    public static final String SCHUELER_EXTRA = "com.example.labor09_list.SCHUELER";
     private final static int CSV_RESOURCE = R.raw.schueler_15_16;
 
     private KlassenAdapter klassenAdapter;
@@ -36,15 +35,6 @@ public class MainActivity extends AppCompatActivity implements KlassenOnClickLis
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         rv_klassen.setLayoutManager(layoutManager);
         rv_klassen.setAdapter(klassenAdapter);
-    }
-
-    private void openDetails(View view, Klasse klasse) {
-        Intent intent = new Intent(this, DetailActivity.class);
-        intent.putStringArrayListExtra(SCHUELER_EXTRA, klasse.getSchuelerList().stream()
-                                                                .sorted(Comparator.comparing(Schueler::getKatNr))
-                                                                .map(s -> s.toString())
-                                                                .collect(Collectors.toCollection(ArrayList::new)));
-        startActivity(intent);
     }
 
     @Override

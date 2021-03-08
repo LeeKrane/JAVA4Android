@@ -13,4 +13,7 @@
     <string name="new_km">New Km</string>
     <string name="liters">Liters</string>
     <string name="price_per_liter">Price</string>
+    <string name="dialog_title_price_per_100km">Price per 100km</string>
+    <string name="dialog_title_deletion">Are you sure?</string>
+    <string name="dialog_content_deletion">Are you sure that you want to DELETE ALL ENTRIES?</string>
 </resources>

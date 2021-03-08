@@ -10,6 +10,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+import java.util.Locale;
 
 public class KlassenAdapter extends RecyclerView.Adapter<KlassenAdapter.KlassenViewHolder> {
     private List<Klasse> klassen;
@@ -30,7 +31,7 @@ public class KlassenAdapter extends RecyclerView.Adapter<KlassenAdapter.KlassenV
     @Override
     public void onBindViewHolder(@NonNull KlassenViewHolder holder, int position) {
         holder.klassenName.setText(klassen.get(position).getName());
-        holder.schuelerCount.setText("(" + String.valueOf(klassen.get(position).getSchuelerList().size()) + ")");
+        holder.schuelerCount.setText(String.format(Locale.ENGLISH, "(%d)", klassen.get(position).getSchuelerList().size()));
     }
 
     @Override

@@ -3,6 +3,8 @@ package com.example.labor09_recycler_list;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.Locale;
+
 public class Schueler implements Parcelable {
     private int katNr;
     private String klasse;
@@ -87,7 +89,7 @@ public class Schueler implements Parcelable {
 
     @Override
     public String toString() {
-        return String.format("%02d", katNr) + " " + vorname + " " + nachname;
+        return String.format(Locale.ENGLISH, "%02d %s %s", katNr, vorname, nachname);
     }
 
     @Override

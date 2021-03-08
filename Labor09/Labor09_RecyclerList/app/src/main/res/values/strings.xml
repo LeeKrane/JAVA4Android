@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Labor09_List</string>
+    <string name="imageview_description_geschlecht">Geschlecht</string>
 </resources>

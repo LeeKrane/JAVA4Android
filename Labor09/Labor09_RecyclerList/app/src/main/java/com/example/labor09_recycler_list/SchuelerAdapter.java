@@ -3,6 +3,7 @@ package com.example.labor09_recycler_list;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -31,7 +32,10 @@ public class SchuelerAdapter extends RecyclerView.Adapter<SchuelerAdapter.Schuel
         holder.katNr.setText(String.valueOf(schueler.getKatNr()));
         holder.vorname.setText(schueler.getVorname());
         holder.nachname.setText(schueler.getNachname());
-        // TODO: Geschlecht Icon
+        if (schueler.getGeschlecht() == 'M')
+            holder.geschlecht.setImageResource(R.drawable.baseline_male_black_18dp);
+        else
+            holder.geschlecht.setImageResource(R.drawable.baseline_female_black_18dp);
     }
 
     @Override
@@ -44,6 +48,7 @@ public class SchuelerAdapter extends RecyclerView.Adapter<SchuelerAdapter.Schuel
         TextView katNr;
         TextView vorname;
         TextView nachname;
+        ImageView geschlecht;
 
         public SchuelerViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -51,6 +56,7 @@ public class SchuelerAdapter extends RecyclerView.Adapter<SchuelerAdapter.Schuel
             katNr = itemView.findViewById(R.id.tv_katNr);
             vorname = itemView.findViewById(R.id.tv_vorname);
             nachname = itemView.findViewById(R.id.tv_nachname);
+            geschlecht = itemView.findViewById(R.id.iv_geschlecht);
         }
     }
 }

@@ -4,10 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import java.util.List;
+import java.util.Locale;
 
 public class ShowActivity extends AppCompatActivity implements TankvorgangOnClickListener {
     private List<Tankvorgang> tankvorgaenge;
@@ -30,9 +34,14 @@ public class ShowActivity extends AppCompatActivity implements TankvorgangOnClic
     @Override
     public void onClick (int position) {
         Tankvorgang tankvorgang = tankvorgaenge.get(position);
-        // TODO:
-        //  - Get View in here somehow,
-        //  - Ask teacher for the meaning of "die zu diesem Eintrag durchnittlichen Benzinkosten pro 100km"
-        MainActivity.tooltip(this, "", Toast.LENGTH_LONG);
+        double pricePer100Km = tankvorgang.getLiters() * 100 * tankvorgang.getPricePerLiter()
+                / (tankvorgang.getNewKm() - tankvorgang.getOldKm());
+
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.dialog_title_price_per_100km)
+                .setMessage(String.format(Locale.ENGLISH, "€ %.3f", pricePer100Km))
+                .setNeutralButton("OK", (dialog, which) -> dialog.cancel())
+                .create()
+                .show();
     }
 }
