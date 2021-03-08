@@ -75,7 +75,7 @@ public class TankvorgangDAO {
 
     public Optional<Double> getMaxKm () {
         String sql = "SELECT * FROM " + TABLE_TANKVORGANG +
-                " ORDER BY " + COLUMN_TV_ID + " DESC LIMIT 1;";
+                " ORDER BY " + COLUMN_TV_KM_NEW + " DESC LIMIT 1;";
         Cursor cursor = database.rawQuery(sql, null);
         cursor.moveToLast();
 

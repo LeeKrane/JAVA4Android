@@ -28,7 +28,7 @@ public class TankvorgangSQLiteOpenHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_CREATE =
             "create table " + TABLE_TANKVORGANG + "("
-            + COLUMN_TV_ID + " integer primary key autoincrement, "
+            + COLUMN_TV_ID + " integer primary key, "
             + COLUMN_TV_DATE + " date not null, "
             + COLUMN_TV_KM_OLD + " double not null, "
             + COLUMN_TV_KM_NEW + " double not null, "
