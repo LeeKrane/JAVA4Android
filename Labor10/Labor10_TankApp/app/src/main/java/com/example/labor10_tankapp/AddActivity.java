@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 public class AddActivity extends AppCompatActivity {
     DatePicker datePicker;
@@ -23,11 +24,9 @@ public class AddActivity extends AppCompatActivity {
         LocalDate now = LocalDate.now();
         datePicker.init(now.getYear(), now.getMonthValue()-1, now.getDayOfMonth(), null);
 
-        TankvorgangDAO.getInstance(this).getAllTankvorgaenge().stream()
-                    .mapToDouble(Tankvorgang::getNewKm)
-                    .max()
-                    .ifPresent(d -> ((EditText) findViewById(R.id.editText_oldKm))
-                            .setText(String.valueOf(d)));
+        Optional<Double> max = TankvorgangDAO.getInstance(this).getMaxKm();
+        max.ifPresent(aDouble -> ((EditText) findViewById(R.id.editText_oldKm))
+                .setText(String.valueOf(aDouble)));
     }
 
     public void onClick_btnSave (View view) {

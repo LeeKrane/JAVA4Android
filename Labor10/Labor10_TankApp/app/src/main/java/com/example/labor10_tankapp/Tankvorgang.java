@@ -23,7 +23,7 @@ public class Tankvorgang {
         this.pricePerLiter = pricePerLiter;
     }
 
-    public Tankvorgang clone (long id) {
+    public Tankvorgang withId (long id) {
         return new Tankvorgang(id, date, oldKm, newKm, liters, pricePerLiter);
     }
 

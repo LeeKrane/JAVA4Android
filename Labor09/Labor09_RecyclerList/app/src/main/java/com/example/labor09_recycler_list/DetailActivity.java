@@ -20,6 +20,7 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         Klasse klasse = getIntent().getParcelableExtra("KLASSEN_EXTRA");
+        setTitle(klasse.getName());
         klasse.getSchuelerList().sort(Comparator.comparing(Schueler::getKatNr));
         SchuelerAdapter schuelerAdapter = new SchuelerAdapter(klasse.getSchuelerList());
         RecyclerView rv_schueler = findViewById(R.id.rv_schueler);

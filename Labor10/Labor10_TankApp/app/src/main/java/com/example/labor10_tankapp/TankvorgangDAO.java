@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static com.example.labor10_tankapp.TankvorgangSQLiteOpenHelper.*;
 
@@ -45,7 +46,7 @@ public class TankvorgangDAO {
         values.put(COLUMN_TV_KM_NEW, tankvorgang.getNewKm());
         values.put(COLUMN_TV_LITERS, tankvorgang.getLiters());
         values.put(COLUMN_TV_PRICE_PER_LITER, tankvorgang.getPricePerLiter());
-        return tankvorgang.clone(database.insert(TABLE_TANKVORGANG, null, values));
+        return tankvorgang.withId(database.insert(TABLE_TANKVORGANG, null, values));
     }
 
     public List<Tankvorgang> getAllTankvorgaenge () {
@@ -70,5 +71,18 @@ public class TankvorgangDAO {
 
     public void deleteAllTankvorgaenge () {
         database.execSQL("DELETE FROM " + TABLE_TANKVORGANG + ";");
+    }
+
+    public Optional<Double> getMaxKm () {
+        String sql = "SELECT * FROM " + TABLE_TANKVORGANG +
+                " ORDER BY " + COLUMN_TV_ID + " DESC LIMIT 1;";
+        Cursor cursor = database.rawQuery(sql, null);
+        cursor.moveToLast();
+
+        if (cursor.getCount() == 0)
+            return Optional.empty();
+        Optional<Double> max = Optional.of(cursor.getDouble(cursor.getColumnIndex(COLUMN_TV_KM_NEW)));
+        cursor.close();
+        return max;
     }
 }
